@@ -28,7 +28,7 @@
               ><span class="logo-header-second">Studio</span></a
             >
             <ul class="menu">
-              <li class="link">Agencja</li>
+              <li class="link underline-agency">Agencja</li>
               <li><a class="link" href="portfolio.html">Portfolio</a></li>
               <li class="link">Kontakt</li>
             </ul>
@@ -68,7 +68,9 @@
       <section class="section effectiv-business">
         <div class="container">
           <h1 class="title-main">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-          <button type="button" class="button-main">Zamów usługę</button>
+          <button class="button-main" type="button" data-modal-open>
+            Zamów usługę
+          </button>
         </div>
       </section>
       <section class="section">
@@ -144,41 +146,33 @@
             <h2 class="tittle">Czym się zajmujemy</h2>
           </header>
           <ul class="responsibilities">
-            <li>
-              <article>
-                <figure class="respo-picture">
-                  <img
-                    src="https://github.com/MichalBryla3/goit-markup-hw-01/blob/main/images/photo1.jpg?raw=true"
-                    alt="work on computer"
-                    width="370"
-                    height="294"
-                  />
-                </figure>
-              </article>
+            <li class="respo-picture">
+              <img
+                src="https://github.com/MichalBryla3/goit-markup-hw-01/blob/main/images/photo1.jpg?raw=true"
+                alt="work on computer"
+                width="370"
+                height="294"
+              />
+              <p class="label-respo-picture">Aplikacje komputerowe</p>
             </li>
-            <li>
-              <article>
-                <figure class="respo-picture">
-                  <img
-                    src="https://github.com/MichalBryla3/goit-markup-hw-01/blob/main/images/photo2.jpg?raw=true"
-                    alt="work on smartphone"
-                    width="370"
-                    height="294"
-                  />
-                </figure>
-              </article>
+
+            <li class="respo-picture">
+              <img
+                src="https://github.com/MichalBryla3/goit-markup-hw-01/blob/main/images/photo2.jpg?raw=true"
+                alt="work on smartphone"
+                width="370"
+                height="294"
+              />
+              <p class="label-respo-picture">Aplikacje mobilne</p>
             </li>
-            <li>
-              <article>
-                <figure class="respo-picture">
-                  <img
-                    src="https://github.com/MichalBryla3/goit-markup-hw-01/blob/main/images/photo3.jpg?raw=true"
-                    alt="work on tablet"
-                    width="370"
-                    height="294"
-                  />
-                </figure>
-              </article>
+            <li class="respo-picture">
+              <img
+                src="https://github.com/MichalBryla3/goit-markup-hw-01/blob/main/images/photo3.jpg?raw=true"
+                alt="work on tablet"
+                width="370"
+                height="294"
+              />
+              <p class="label-respo-picture">Rozwiązania graficzne</p>
             </li>
           </ul>
         </div>
@@ -548,5 +542,20 @@
         </ul>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="button-close" type="bitton" data-modal-close>
+          <svg id="icon-close">
+            <use
+              xlink:href="./images/icons.svg#icon-close"
+              width="11px"
+              height="11px"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

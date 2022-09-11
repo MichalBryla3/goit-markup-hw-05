@@ -5,6 +5,7 @@
   --font-weight: 400;
   --font-style: normal;
   --font-family: "Roboto", "Raleway", sans-serif;
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 * {
   box-sizing: border-box;
@@ -93,11 +94,33 @@ body {
   color: black;
   cursor: pointer;
 }
+
 .link:focus,
 .link:active,
 .link:hover {
   color: #2196f3;
   fill: #2196f3;
+  transition: transform 250ms var(--transition);
+}
+.underline-portfolio::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 58px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2196f3;
+  margin-top: 28px;
+}
+.underline-agency::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 53px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2196f3;
+  margin-top: 28px;
 }
 
 .section {
@@ -171,11 +194,31 @@ body {
 }
 
 .respo-picture {
-  padding: 0px 15px 0px;
+  padding: 0px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  gap: 15px;
+  width: 370px;
+  height: 294px;
 }
+.label-respo-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  top: 1427px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
 .our-team {
   background-color: #f5f4fa;
   padding-bottom: 50px;
@@ -228,6 +271,8 @@ body {
 .social-icon-color-team:active {
   background-color: #2196f3;
   margin: 5px;
+  fill: #eeeeee;
+  transition: transform 250ms var(--transition);
 }
 .icon-team {
   width: 44px;
@@ -253,6 +298,7 @@ body {
 .client:focus {
   fill: #2196f3;
   border-color: #2196f3;
+  transition: transform 250ms var(--transition);
 }
 
 .buttons {
@@ -270,6 +316,7 @@ body {
 .buttons:hover {
   color: white;
   background-color: #2196f3;
+  transition: transform 250ms var(--transition);
 }
 .button-nav {
   display: flex;
@@ -295,6 +342,47 @@ body {
 .item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: transform 250ms var(--transition);
+}
+
+.card {
+  position: relative;
+  padding: 0;
+  text-align: left;
+  width: 370px;
+  height: 404px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover .overlay-card {
+  transform: translateY(0);
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms var(--transition);
+}
+.overlay-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 294px;
+  transform: translateY(140%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.overlay-card > p {
+  color: white;
+  padding: 49px 45px 49px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+}
+
+.card-description {
+  display: block;
+  text-align: left;
+  padding: 20px 0 4px 24px;
 }
 
 .title-portfolio {
@@ -308,6 +396,9 @@ body {
   color: #757575;
   line-height: 1.87;
 }
+
+/* FOOTER */
+
 .footer {
   display: flex;
   background-color: #2f303a;
@@ -369,6 +460,7 @@ body {
 .social-icon-color:focus,
 .social-icon-color:active {
   background-color: #2196f3;
+  transition: transform 250ms var(--transition);
 }
 .footer-icon {
   width: 44px;
@@ -391,4 +483,49 @@ body {
   width: 300px;
   margin-left: 215px;
   margin: 60px 0px 0px 620px;
+}
+
+/* backdrop */
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms ease-in-out;
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 3s;
+}
+.button-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 9px;
+  background-color: white;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
