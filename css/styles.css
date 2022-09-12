@@ -529,3 +529,7 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
+.icon-close-size {
+  width: 20px;
+  height: 20px;
+}
